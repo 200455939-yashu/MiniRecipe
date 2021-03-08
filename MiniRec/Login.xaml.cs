@@ -15,7 +15,7 @@ namespace MiniRec
 
         private void login(object sender, EventArgs e)
         {
-            if (username.Text == "yashu" && password.Text == "yashu")
+            if (username.Text == "Admin" && password.Text == "admin")
             {
                 App.Current.Properties["loggedIn"] = true;
                 minirec.navigationMain("main");
