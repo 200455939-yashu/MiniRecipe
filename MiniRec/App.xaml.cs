@@ -1,4 +1,5 @@
 ﻿using System;
+using MiniRec.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,7 +22,7 @@ namespace MiniRec
                     MainPage = new NavigationPage(new Login());
                     break;
                 case "main":
-                    MainPage = new NavigationPage(new MainPage());
+                    MainPage = new NavigationPage(new BrowsePage());
                     break;
             }
         }
@@ -36,7 +37,7 @@ namespace MiniRec
             }
             else
             {
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new NavigationPage(new BrowsePage());
             }
         }
 
@@ -54,7 +55,7 @@ namespace MiniRec
             }
             else
             {
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new NavigationPage(new BrowsePage());
             }
         }
     }

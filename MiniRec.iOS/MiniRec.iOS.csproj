@@ -134,7 +134,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\placeholder-logo.png" />
-    <BundleResource Include="Resources\recipe-image-300-450.png" />
+    <BundleResource Include="Resources\placeholder_logo.png" />
+    <BundleResource Include="Resources\recipe_image_300_450.png" />
   </ItemGroup>
 </Project>
