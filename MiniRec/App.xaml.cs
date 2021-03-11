@@ -22,7 +22,7 @@ namespace MiniRec
                     MainPage = new NavigationPage(new Login());
                     break;
                 case "main":
-                    MainPage = new NavigationPage(new BrowsePage());
+                    MainPage = new TabbedMainPage();
                     break;
             }
         }
@@ -37,7 +37,7 @@ namespace MiniRec
             }
             else
             {
-                MainPage = new NavigationPage(new BrowsePage());
+                MainPage = new TabbedMainPage();
             }
         }
 
@@ -55,7 +55,7 @@ namespace MiniRec
             }
             else
             {
-                MainPage = new NavigationPage(new BrowsePage());
+                MainPage = new TabbedMainPage();
             }
         }
     }
