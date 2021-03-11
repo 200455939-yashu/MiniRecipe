@@ -9,10 +9,54 @@
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0">
                 <Label Text="Please enter your credentials" />
-                <Entry x:Name="username" Placeholder="User name" />
-                <Entry x:Name="password" Placeholder="Password" IsPassword="True" />
+                
+                
             </StackLayout>
             <Button Grid.Row="2" Text="Login" Clicked="login" />
         </Grid>
     </ContentPage.Content>
+
+    <StackLayout
+        Margin="20"
+        Orientation="Vertical"
+        VerticalOptions="FillAndExpand"
+        >
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Skip for Now"
+                HorizontalOptions="End"
+                Grid.Row="0"
+                Grid.Column="2"
+                FontSize="Small"
+                HeightRequest="0"
+                />
+        </Grid>
+
+        <StackLayout Margin="30"
+                     Orientation="Vertical"
+                     VerticalOptions="FillAndExpand">
+
+            <Image Source="placeholder-logo.png" />
+            <Label Text="Login" />
+            <Entry x:Name="username" Placeholder="User name" />
+            <Entry x:Name="password" Placeholder="Password" IsPassword="True" />
+            <Button Text="Log in" Clicked="login"/>
+            <Button Text="Forgot password?" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Label Text="Don't have an account?" VerticalTextAlignment="Center" />
+                <Button Text="Sign up"/>
+            </StackLayout>
+
+        </StackLayout>
+        <!-- Insert Social Media Logins Here -->
+    </StackLayout>
 </ContentPage>

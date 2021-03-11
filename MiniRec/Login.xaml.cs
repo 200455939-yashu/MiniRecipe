@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace MiniRec
@@ -17,9 +17,12 @@ namespace MiniRec
         {
             if (username.Text == "Admin" && password.Text == "admin")
             {
+                Debug.WriteLine("Correct username & password");
                 App.Current.Properties["loggedIn"] = true;
                 minirec.navigationMain("main");
-            }
+            } else {
+                Debug.WriteLine("Wrong username & password");
+			}
         }
     }
 }
