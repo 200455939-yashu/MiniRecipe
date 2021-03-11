@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniRec.MainPage">
+
+    <StackLayout>
+        <CollectionView
+            x:Name="collectionList"
+            ItemsSource="{Binding CategoriesList}"
+            ItemsLayout="HorizontalList"
+            HorizontalOptions="Center"
+            SelectionMode="Single"
+            FlowDirection="LeftToRight"
+            SelectionChanged="collectionList_SelectionChanged"
+            HeightRequest="40">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Button
+                        Text="{Binding Name}"
+                        Padding="10"
+                        />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ScrollView
+            Orientation="Horizontal"
+            HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal">
+                <Frame BorderColor="Gray"
+                       Margin="20, 10"
+                       CornerRadius="10"
+                       HasShadow="True"
+                       WidthRequest="300"
+                       HeightRequest="570"
+                       >
+                    <StackLayout Spacing="15">
+                        <Image Source="recipe-image-300-450.png"
+                               Margin="-10"
+                               Aspect="AspectFit"
+                               HeightRequest="450"
+                               WidthRequest="300"
+                               />
+                        <Label Text="Carbonara" FontSize="Large" FontAttributes="Bold" />
+                        <Label
+                            Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula magna, rutrum non quam et, auctor sagittis lectus. Suspendisse lacinia ornare nulla, vel semper nisl semper vel."
+                            FontSize="Small"
+                            />
+                     </StackLayout>
+                </Frame>
+                <Frame BorderColor="Gray"
+                       Margin="20, 10"
+                       CornerRadius="10"
+                       HasShadow="True"
+                       WidthRequest="300"
+                       HeightRequest="570"
+                       >
+                    <StackLayout Spacing="15">
+                        <Image Source="recipe-image-300-450.png"
+                               Margin="-10"
+                               Aspect="AspectFit"
+                               HeightRequest="450"
+                               WidthRequest="300"
+                               />
+                        <Label Text="Bolognese" FontSize="Large" FontAttributes="Bold" />
+                        <Label
+                            Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula magna, rutrum non quam et, auctor sagittis lectus. Suspendisse lacinia ornare nulla, vel semper nisl semper vel."
+                            FontSize="Small"
+                            />
+                     </StackLayout>
+                </Frame>
+             </StackLayout>
+        </ScrollView>
+        <Button Text="Logout" Clicked="logout"></Button>
+    </StackLayout>
+
+</ContentPage>
