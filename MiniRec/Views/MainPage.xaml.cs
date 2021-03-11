@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using MiniRec.ViewModels;
 
 namespace MiniRec
 {
@@ -13,6 +14,7 @@ namespace MiniRec
         private App minirec = Application.Current as App;
         public MainPage()
         {
+            BindingContext = new MainPageVM();
             InitializeComponent();
         }
 
@@ -21,5 +23,8 @@ namespace MiniRec
             App.Current.Properties["loggedIn"] = false;
             minirec.navigationMain("login");
         }
-    }
+
+		void collectionList_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e) {
+		}
+	}
 }

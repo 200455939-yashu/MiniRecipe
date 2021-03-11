@@ -4,21 +4,74 @@
              x:Class="MiniRec.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Mini Recipes app" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="List of Recipes will be listed here" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text=" Give it a try! you will enjoy" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="List of Recipes are on the way will display soon "/>
-                        <Span Text="Link to specific recipe might come here" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <CollectionView
+            x:Name="collectionList"
+            ItemsSource="{Binding CategoriesList}"
+            ItemsLayout="HorizontalList"
+            HorizontalOptions="Center"
+            SelectionMode="Single"
+            FlowDirection="LeftToRight"
+            SelectionChanged="collectionList_SelectionChanged"
+            HeightRequest="40">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Button
+                        Text="{Binding Name}"
+                        Padding="10"
+                        />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ScrollView
+            Orientation="Horizontal"
+            HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal">
+                <Frame BorderColor="Gray"
+                       Margin="20, 10"
+                       CornerRadius="10"
+                       HasShadow="True"
+                       WidthRequest="300"
+                       HeightRequest="570"
+                       >
+                    <StackLayout Spacing="15">
+                        <Image Source="recipe-image-300-450.png"
+                               Margin="-10"
+                               Aspect="AspectFit"
+                               HeightRequest="450"
+                               WidthRequest="300"
+                               />
+                        <Label Text="Carbonara" FontSize="Large" FontAttributes="Bold" />
+                        <Label
+                            Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula magna, rutrum non quam et, auctor sagittis lectus. Suspendisse lacinia ornare nulla, vel semper nisl semper vel."
+                            FontSize="Small"
+                            />
+                     </StackLayout>
+                </Frame>
+                <Frame BorderColor="Gray"
+                       Margin="20, 10"
+                       CornerRadius="10"
+                       HasShadow="True"
+                       WidthRequest="300"
+                       HeightRequest="570"
+                       >
+                    <StackLayout Spacing="15">
+                        <Image Source="recipe-image-300-450.png"
+                               Margin="-10"
+                               Aspect="AspectFit"
+                               HeightRequest="450"
+                               WidthRequest="300"
+                               />
+                        <Label Text="Bolognese" FontSize="Large" FontAttributes="Bold" />
+                        <Label
+                            Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula magna, rutrum non quam et, auctor sagittis lectus. Suspendisse lacinia ornare nulla, vel semper nisl semper vel."
+                            FontSize="Small"
+                            />
+                     </StackLayout>
+                </Frame>
+             </StackLayout>
+        </ScrollView>
         <Button Text="Logout" Clicked="logout"></Button>
     </StackLayout>
 

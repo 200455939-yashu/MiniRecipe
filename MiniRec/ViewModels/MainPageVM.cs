@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-//using MiniRec.Models;
+using MiniRec.Models;
 
 namespace MiniRec.ViewModels
 {
     public class MainPageVM : ViewModelBase
     {
-        public ObservableCollection<String> _categorieslist = new ObservableCollection<String>();
-        public ObservableCollection<String> CategoriesList
+        public ObservableCollection<Category> _categorieslist = new ObservableCollection<Category>();
+        public ObservableCollection<Category> CategoriesList
         {
             get { return _categorieslist; }
             set { SetProperty(ref _categorieslist, value); }
@@ -16,11 +16,11 @@ namespace MiniRec.ViewModels
 
         public MainPageVM()
         {
-            CategoriesList = new ObservableCollection<String>();
-            CategoriesList.Add("Breakfast");
-            CategoriesList.Add("Lunch");
-            CategoriesList.Add("Dinner");
-            CategoriesList.Add("Dessert");
+            CategoriesList = new ObservableCollection<Category>();
+            CategoriesList.Add(new Category { Name = "Breakfast" });
+            CategoriesList.Add(new Category { Name = "Lunch" });
+            CategoriesList.Add(new Category { Name = "Dinner" });
+            CategoriesList.Add(new Category { Name = "Dessert" });
         }
     }
 }
