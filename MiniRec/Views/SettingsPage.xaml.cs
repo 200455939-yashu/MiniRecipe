@@ -12,11 +12,17 @@ namespace MiniRec.Views {
 			InitializeComponent();
 		}
 
-		private void logout(object sender, EventArgs e) {
+		private async void logout(object sender, EventArgs e) {
 			Debug.WriteLine("Logged in: " +
 				App.Current.Properties["loggedIn"]);
-			App.Current.Properties["loggedIn"] = false;
 
+			if(App.Current.Properties.ContainsKey("loggedIn")) {
+				App.Current.Properties["loggedIn"] = false;
+			} else {
+				App.Current.Properties.Add("loggedIn", false);
+			}
+
+			await App.Current.SavePropertiesAsync();
 			Debug.WriteLine("Logged in: " +
 				App.Current.Properties["loggedIn"]);
 
