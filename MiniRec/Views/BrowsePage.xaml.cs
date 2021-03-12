@@ -9,7 +9,6 @@ using MiniRec.Models;
 
 namespace MiniRec.Views {
 	public partial class BrowsePage : ContentPage {
-		private App minirec = Application.Current as App;
 
 		public BrowsePage() {
 			BindingContext = new BrowsePageVM();
@@ -29,12 +28,6 @@ namespace MiniRec.Views {
 			}
 
 			//collectionList.SelectedItem = null;
-		}
-
-
-		private void logout(object sender, EventArgs e) {
-			App.Current.Properties["loggedIn"] = false;
-			minirec.navigationMain("login");
 		}
 	}
 }

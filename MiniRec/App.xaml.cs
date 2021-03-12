@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using MiniRec.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -29,8 +30,10 @@ namespace MiniRec
 
         protected override void OnStart()
         {
-            var isLoggedIn = App.Current.Properties.ContainsKey("loggedIn") ? (bool)App.Current.Properties["loggedIn"] : false;
-            Console.WriteLine(isLoggedIn);
+            var isLoggedIn =
+                App.Current.Properties.ContainsKey("loggedIn") ?
+                (bool)App.Current.Properties["loggedIn"] : false;
+            Console.WriteLine("Logged in on start: " + isLoggedIn);
             if (!isLoggedIn)
             {
                 MainPage = new NavigationPage(new Login());

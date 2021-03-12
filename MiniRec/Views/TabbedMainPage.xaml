@@ -8,7 +8,7 @@
     <!--Pages can be added as references or inline-->
 
     <NavigationPage
-        Title="Browse Pages"
+        Title="Browse Recipes"
         IconImageSource="{x:OnPlatform Android=open_book, iOS=open_book.svg}"
         >
         <x:Arguments>
@@ -22,7 +22,7 @@
         IconImageSource="{x:OnPlatform Android=shopping_list, iOS=shopping_list.svg}"
         >
         <x:Arguments>
-            <ContentPage
+            <views:YourListPage
                 Title="Your Recipe List"/>
         </x:Arguments>
     </NavigationPage>
@@ -32,7 +32,7 @@
         IconImageSource="{x:OnPlatform Android=settings, iOS=settings.svg}"
         >
         <x:Arguments>
-            <ContentPage
+            <views:SettingsPage
                 Title="Settings"/>
         </x:Arguments>
     </NavigationPage>

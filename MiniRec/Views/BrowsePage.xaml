@@ -73,7 +73,6 @@
                     </Frame>
                  </StackLayout>
             </ScrollView>
-            <Button Text="Logout" Clicked="logout"></Button>
         </StackLayout>
 
     </ContentPage.Content>
