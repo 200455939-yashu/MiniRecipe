@@ -61,6 +61,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -68,6 +69,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MyTabbedPageRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -125,6 +127,9 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -134,7 +139,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\placeholder-logo.png" />
-    <BundleResource Include="Resources\recipe-image-300-450.png" />
+    <BundleResource Include="Resources\placeholder_logo.png" />
+    <BundleResource Include="Resources\recipe_image_300_450.png" />
+    <BundleResource Include="Resources\open_book.svg" />
+    <BundleResource Include="Resources\android.svg" />
+    <BundleResource Include="Resources\apple.svg" />
+    <BundleResource Include="Resources\windows.svg" />
+    <BundleResource Include="Resources\settings.svg" />
+    <BundleResource Include="Resources\shopping_list.svg" />
+    <BundleResource Include="Resources\recipe_image_300_400.png" />
+    <BundleResource Include="Resources\recipe_image_150_150.png" />
   </ItemGroup>
 </Project>

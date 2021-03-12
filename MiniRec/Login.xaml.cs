@@ -13,12 +13,19 @@ namespace MiniRec
             InitializeComponent();
         }
 
-        private void login(object sender, EventArgs e)
+        private async void login(object sender, EventArgs e)
         {
             if (username.Text == "Admin" && password.Text == "admin")
             {
                 Debug.WriteLine("Correct username & password");
-                App.Current.Properties["loggedIn"] = true;
+
+                if(App.Current.Properties.ContainsKey("loggedIn")) {
+                    App.Current.Properties["loggedIn"] = true;
+                } else {
+                    App.Current.Properties.Add("loggedIn", true);
+                }
+
+                await App.Current.SavePropertiesAsync();
                 minirec.navigationMain("main");
             } else {
                 Debug.WriteLine("Wrong username & password");

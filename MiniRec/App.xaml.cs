@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using MiniRec.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,22 +23,30 @@ namespace MiniRec
                     MainPage = new NavigationPage(new Login());
                     break;
                 case "main":
-                    MainPage = new NavigationPage(new MainPage());
+                    MainPage = new TabbedMainPage();
                     break;
             }
         }
 
         protected override void OnStart()
         {
-            var isLoggedIn = App.Current.Properties.ContainsKey("loggedIn") ? (bool)App.Current.Properties["loggedIn"] : false;
-            Console.WriteLine(isLoggedIn);
+            if(App.Current.Properties.ContainsKey("loggedIn")) {
+                Debug.WriteLine("Logged in on start: " + App.Current.Properties["loggedIn"]);
+			} else {
+                Debug.WriteLine("Logged in key does not exist on start");
+            }
+
+            var isLoggedIn =
+                App.Current.Properties.ContainsKey("loggedIn") ?
+                (bool)App.Current.Properties["loggedIn"] : false;
+
             if (!isLoggedIn)
             {
                 MainPage = new NavigationPage(new Login());
             }
             else
             {
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new TabbedMainPage();
             }
         }
 
@@ -46,15 +56,20 @@ namespace MiniRec
 
         protected override void OnResume()
         {
-            var isLoggedIn = App.Current.Properties.ContainsKey("loggedIn") ? (bool)App.Current.Properties["loggedIn"] : false;
-            Console.WriteLine(isLoggedIn);
-            if (!isLoggedIn)
-            {
-                MainPage = new NavigationPage(new Login());
+            if(App.Current.Properties.ContainsKey("loggedIn")) {
+                Debug.WriteLine("Logged in on resume: " + App.Current.Properties["loggedIn"]);
+            } else {
+                Debug.WriteLine("Logged in key does not exist on resume");
             }
-            else
-            {
-                MainPage = new NavigationPage(new MainPage());
+
+            var isLoggedIn =
+                App.Current.Properties.ContainsKey("loggedIn") ?
+                (bool)App.Current.Properties["loggedIn"] : false;
+
+            if(!isLoggedIn) {
+                MainPage = new NavigationPage(new Login());
+            } else {
+                MainPage = new TabbedMainPage();
             }
         }
     }

@@ -44,7 +44,7 @@
                      Orientation="Vertical"
                      VerticalOptions="FillAndExpand">
 
-            <Image Source="placeholder-logo.png" />
+            <Image Source="placeholder_logo.png" />
             <Label Text="Login" />
             <Entry x:Name="username" Placeholder="User name" />
             <Entry x:Name="password" Placeholder="Password" IsPassword="True" />

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniRec.Views.RecipeDetailsPage">
+    <ContentPage.Content>
+        <Grid>
+            <Label Grid.Row="0" Grid.Column="0" Text="{Binding name}"/>
+            <Label Grid.Row="0" Grid.Column="1" Text="{Binding rating}"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Preparation"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="Lorem ipsum"/>
+
+            <Label Grid.Row="2" Grid.Column="0" Text="Ingredients"/>
+            <Label Grid.Row="2" Grid.Column="1" Text="Lorem ipsum"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
