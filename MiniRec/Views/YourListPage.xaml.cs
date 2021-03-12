@@ -13,21 +13,25 @@ namespace MiniRec.Views {
 			InitializeComponent();
 		}
 
-		void collectionList_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e) {
-			if(collectionList.SelectedItem == null) return;
+        void collectionList_SelectionChanged(object sender, SelectionChangedEventArgs e) {
 
-			var recipeObject = (e.CurrentSelection.FirstOrDefault() as Recipe);
+            if(collectionList.SelectedItem == null) return;
 
-			if(recipeObject != null) {
+            var recipeObject = (e.CurrentSelection.FirstOrDefault() as Recipe);
 
-				string current = recipeObject.Name;
+            if(recipeObject != null) {
 
-				Debug.WriteLine($"current selected recipe: {current}");
-			}
+                string current = recipeObject.Name;
 
-			//collectionList.SelectedItem = null;
-		}
-	}
+                Debug.WriteLine($"current selected recipe: {current}");
+
+                var newPage = new RecipeDetailsPage(recipe: recipeObject);
+                Navigation.PushAsync(newPage);
+            }
+
+            collectionList.SelectedItem = null;
+        }
+    }
 
 
 }

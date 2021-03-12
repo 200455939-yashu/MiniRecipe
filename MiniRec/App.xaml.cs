@@ -30,10 +30,16 @@ namespace MiniRec
 
         protected override void OnStart()
         {
+            if(App.Current.Properties.ContainsKey("loggedIn")) {
+                Debug.WriteLine("Logged in on start: " + App.Current.Properties["loggedIn"]);
+			} else {
+                Debug.WriteLine("Logged in key does not exist on start");
+            }
+
             var isLoggedIn =
                 App.Current.Properties.ContainsKey("loggedIn") ?
                 (bool)App.Current.Properties["loggedIn"] : false;
-            Console.WriteLine("Logged in on start: " + isLoggedIn);
+
             if (!isLoggedIn)
             {
                 MainPage = new NavigationPage(new Login());
@@ -50,14 +56,19 @@ namespace MiniRec
 
         protected override void OnResume()
         {
-            var isLoggedIn = App.Current.Properties.ContainsKey("loggedIn") ? (bool)App.Current.Properties["loggedIn"] : false;
-            Console.WriteLine(isLoggedIn);
-            if (!isLoggedIn)
-            {
-                MainPage = new NavigationPage(new Login());
+            if(App.Current.Properties.ContainsKey("loggedIn")) {
+                Debug.WriteLine("Logged in on resume: " + App.Current.Properties["loggedIn"]);
+            } else {
+                Debug.WriteLine("Logged in key does not exist on resume");
             }
-            else
-            {
+
+            var isLoggedIn =
+                App.Current.Properties.ContainsKey("loggedIn") ?
+                (bool)App.Current.Properties["loggedIn"] : false;
+
+            if(!isLoggedIn) {
+                MainPage = new NavigationPage(new Login());
+            } else {
                 MainPage = new TabbedMainPage();
             }
         }

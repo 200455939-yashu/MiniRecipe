@@ -10,9 +10,6 @@ namespace MiniRec.Views {
 
 		public SettingsPage() {
 			InitializeComponent();
-
-			Debug.WriteLine("Logged in: " +
-				App.Current.Properties["loggedIn"]);
 		}
 
 		private void logout(object sender, EventArgs e) {
