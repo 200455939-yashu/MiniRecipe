@@ -46,7 +46,7 @@ namespace MiniRec.iOS {
             if(Element is TabbedPage)
                 if(TabBar?.Items != null)
                     for(int i = 0; i < TabBar.Items.Length; i++)
-                        TabBar.Items[i].ImageInsets = new UIEdgeInsets(8, 8, 8, 8);
+                        TabBar.Items[i].ImageInsets = new UIEdgeInsets(4, 4, 4, 4);
         }
     }
 }

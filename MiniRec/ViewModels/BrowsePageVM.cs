@@ -14,10 +14,10 @@ namespace MiniRec.ViewModels {
 
 		public BrowsePageVM() {
 			CategoriesList = new ObservableCollection<Category>();
-			CategoriesList.Add(new Category { Name = "Breakfast" });
-			CategoriesList.Add(new Category { Name = "Lunch" });
-			CategoriesList.Add(new Category { Name = "Dinner" });
-			CategoriesList.Add(new Category { Name = "Dessert" });
+			CategoriesList.Add(new Category { Id = 0, Name = "Breakfast" });
+			CategoriesList.Add(new Category { Id = 1, Name = "Lunch" });
+			CategoriesList.Add(new Category { Id = 2, Name = "Dinner" });
+			CategoriesList.Add(new Category { Id = 3, Name = "Dessert" });
 		}
 	}
 }

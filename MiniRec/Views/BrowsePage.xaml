@@ -37,10 +37,10 @@
                            HeightRequest="570"
                            >
                         <StackLayout Spacing="15">
-                            <Image Source="recipe_image_300_450.png"
+                            <Image Source="recipe_image_300_400.png"
                                    Margin="-10"
                                    Aspect="AspectFit"
-                                   HeightRequest="450"
+                                   HeightRequest="400"
                                    WidthRequest="300"
                                    />
                             <Label Text="Carbonara" FontSize="Large" FontAttributes="Bold" />
@@ -58,10 +58,10 @@
                            HeightRequest="570"
                            >
                         <StackLayout Spacing="15">
-                            <Image Source="recipe_image_300_450.png"
+                            <Image Source="recipe_image_300_400.png"
                                    Margin="-10"
                                    Aspect="AspectFit"
-                                   HeightRequest="450"
+                                   HeightRequest="400"
                                    WidthRequest="300"
                                    />
                             <Label Text="Bolognese" FontSize="Large" FontAttributes="Bold" />
