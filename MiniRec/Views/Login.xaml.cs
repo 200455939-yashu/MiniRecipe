@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using MiniRec.ViewModels;
 using Xamarin.Forms;
 
 namespace MiniRec
@@ -10,6 +11,7 @@ namespace MiniRec
         private App minirec = Application.Current as App;
         public Login()
         {
+            BindingContext = new LoginViewModel();
             InitializeComponent();
         }
 
@@ -33,7 +35,9 @@ namespace MiniRec
             }
             else { 
 
-                await DisplayAlert("Alert", "Invalid Username or Password", "cancel");
+                await DisplayAlert("Alert", "Invalid Username or Password", "OK");
+                username.Text = "";
+                password.Text = "";
             }
         }
     }
