@@ -12,7 +12,7 @@
                 
                 
             </StackLayout>
-            <Button Grid.Row="2" Text="Login" Clicked="login" />
+            <Button Grid.Row="2" Text="Login" Command="{Binding LoginCommand}" />
         </Grid>
     </ContentPage.Content>
 
@@ -46,9 +46,11 @@
 
             <Image Source="placeholder_logo.png" />
             <Label Text="Login" />
-            <Entry x:Name="username" Placeholder="User name" />
-            <Entry x:Name="password" Placeholder="Password" IsPassword="True" />
-            <Button Text="Log in" Clicked="login"/>
+
+            <Entry Text="{Binding Username, Mode=TwoWay}" Placeholder="User name" />
+            <Entry Text="{Binding Password, Mode=TwoWay}" Placeholder="Password" IsPassword="True" />
+
+            <Button Text="Log in" Command="{Binding LoginCommand}"/>
             <Button Text="Forgot password?" />
 
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
