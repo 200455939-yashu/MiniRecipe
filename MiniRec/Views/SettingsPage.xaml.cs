@@ -8,7 +8,6 @@ namespace MiniRec.Views {
 
 	public partial class SettingsPage : ContentPage {
 
-
 		public SettingsPage() {
 			BindingContext = new SettingsViewModel();
 			InitializeComponent();
