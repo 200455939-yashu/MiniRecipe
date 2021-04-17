@@ -5,7 +5,7 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             x:Class="MiniRec.Views.TabbedMainPage"
             android:TabbedPage.ToolbarPlacement="Bottom"
-            BarBackgroundColor="{StaticResource SecondaryColor}"
+            BarBackgroundColor="{StaticResource Accent}"
             UnselectedTabColor="{StaticResource TextColor}"
             SelectedTabColor="{StaticResource BackgroundColor}"
             >

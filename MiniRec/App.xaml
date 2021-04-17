@@ -6,11 +6,11 @@
         <ResourceDictionary>
             <!-- App Colors -->
             <Color x:Key="PrimaryColor">#1768AC</Color>
-            <Color x:Key="SecondaryColor">#E07A5F</Color>
+            <Color x:Key="SecondaryColor">#48B8D0</Color>
             <Color x:Key="BackgroundColor">#FCF7F8</Color>
             <!--<Color x:Key="BackgroundColor">#FCF7F8</Color>-->
             <Color x:Key="DarkerBackgroundColor">#CED3DC</Color>
-            <Color x:Key="Accent">#48B8D0</Color>
+            <Color x:Key="Accent">#E07A5F</Color>
             <Color x:Key="TextColor">#202020</Color>
 
             <!-- Component  Styles -->
@@ -66,11 +66,11 @@
 
             <!-- Pages -->
             <Style TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="{StaticResource Accent}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource SecondaryColor}" />
             </Style>
 
             <Style TargetType="TabbedPage">
-                <Setter Property="BarTextColor" Value="{StaticResource Accent}" />
+                <Setter Property="BarTextColor" Value="{StaticResource SecondaryColor}" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>
