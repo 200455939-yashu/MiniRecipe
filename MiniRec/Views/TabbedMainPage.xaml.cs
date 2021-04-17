@@ -15,11 +15,7 @@ namespace MiniRec.Views {
 
 		public TabbedMainPage() {
 			InitializeComponent();
-		}
 
-		private void logout(object sender, EventArgs e) {
-			App.Current.Properties["loggedIn"] = false;
-			minirec.navigationMain("login");
 		}
 	}
 }

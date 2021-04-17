@@ -12,6 +12,7 @@ namespace MiniRec
         public Login()
         {
             BindingContext = new LoginViewModel();
+            NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
         }
 

@@ -149,5 +149,6 @@
     <BundleResource Include="Resources\shopping_list.svg" />
     <BundleResource Include="Resources\recipe_image_300_400.png" />
     <BundleResource Include="Resources\recipe_image_150_150.png" />
+    <BundleResource Include="Resources\minireclogo.png" />
   </ItemGroup>
 </Project>
