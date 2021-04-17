@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace MiniRec.ViewModels
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
+        protected App minirec = Application.Current as App;
+
 
         bool isBusy = false;
         public bool IsBusy
@@ -46,6 +49,7 @@ namespace MiniRec.ViewModels
 
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
 
         #endregion
     }
