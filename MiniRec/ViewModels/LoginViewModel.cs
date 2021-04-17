@@ -20,7 +20,6 @@ namespace MiniRec.ViewModels
         }
 
         //Private methods
-        private App minirec = Application.Current as App;
         public Command LoginCommand { get; set; }
         public LoginViewModel()
         {
@@ -53,8 +52,8 @@ namespace MiniRec.ViewModels
             }
             else
             {
-
-                await minirec.MainPage.DisplayAlert("Alert", "Invalid Username or Password", "OK");
+                await Nav.Shared.DisplayAlertAsync("Alert", "Invalid Username or Password");
+                //await minirec.MainPage.DisplayAlert("Alert", "Invalid Username or Password", "OK");
                 Username = "";
                 Password = "";
             }
