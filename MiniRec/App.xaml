@@ -7,7 +7,7 @@
             <!-- App Colors -->
             <Color x:Key="PrimaryColor">#1768AC</Color>
             <Color x:Key="SecondaryColor">#E07A5F</Color>
-            <Color x:Key="BackgroundColor">#FFF000</Color>
+            <Color x:Key="BackgroundColor">#FCF7F8</Color>
             <!--<Color x:Key="BackgroundColor">#FCF7F8</Color>-->
             <Color x:Key="DarkerBackgroundColor">#CED3DC</Color>
             <Color x:Key="Accent">#48B8D0</Color>
@@ -64,11 +64,14 @@
                 <Setter Property="BarTextColor" Value="{StaticResource BackgroundColor}" />
             </Style>
 
+            <!-- Pages -->
             <Style TargetType="ContentPage">
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryColor}" />
+                <Setter Property="BackgroundColor" Value="{StaticResource Accent}" />
             </Style>
 
-
+            <Style TargetType="TabbedPage">
+                <Setter Property="BarTextColor" Value="{StaticResource Accent}" />
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
