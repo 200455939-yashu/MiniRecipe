@@ -6,7 +6,8 @@
             x:Class="MiniRec.Views.TabbedMainPage"
             android:TabbedPage.ToolbarPlacement="Bottom"
             BarBackgroundColor="{StaticResource SecondaryColor}"
-            BarTextColor="{StaticResource BackgroundColor}"
+            UnselectedTabColor="{StaticResource TextColor}"
+            SelectedTabColor="{StaticResource BackgroundColor}"
             >
     <!--Pages can be added as references or inline-->
 
