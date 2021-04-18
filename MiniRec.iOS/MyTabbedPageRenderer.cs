@@ -48,6 +48,7 @@ namespace MiniRec.iOS {
                     for(int i = 0; i < TabBar.Items.Length; i++)
                         TabBar.Items[i].ImageInsets = new UIEdgeInsets(4, 4, 4, 4);
         }
+
     }
 }
 

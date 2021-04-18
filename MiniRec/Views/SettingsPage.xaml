@@ -8,9 +8,8 @@
     <ContentPage.Content>
         <Button Text="Logout"
                 Command="{Binding LogoutCommand}"
-                BorderColor="LightGray" BorderWidth="1"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                Padding="10"></Button>
+                Style="{StaticResource PrimaryButton}"></Button>
     </ContentPage.Content>
 </ContentPage>
