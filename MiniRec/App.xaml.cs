@@ -22,18 +22,7 @@ namespace MiniRec
             //MainPage = new MainPage();
         }
 
-        public void navigationMain(string to)
-        {
-            switch (to)
-            {
-                case "login":
-                    MainPage = new NavigationPage(new Login());
-                    break;
-                case "main":
-                    MainPage = new TabbedMainPage();
-                    break;
-            }
-        }
+
 
         protected override void OnStart()
         {
@@ -62,7 +51,7 @@ namespace MiniRec
         }
 
 
-        private void NavigateMain(MainNavOption navOption)
+        public void NavigateMain(MainNavOption navOption)
         {
 
             switch (navOption)
@@ -81,6 +70,7 @@ namespace MiniRec
         {
             NavigateMain(MainNavOption.AfterLoginPage);
         }
+
         protected override void OnResume()
         {
             if(App.Current.Properties.ContainsKey("loggedIn")) {

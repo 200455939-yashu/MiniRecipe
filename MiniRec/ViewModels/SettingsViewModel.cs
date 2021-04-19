@@ -36,7 +36,7 @@ namespace MiniRec.ViewModels
 			Debug.WriteLine("Logged in: " +
 				minirec.Properties["loggedIn"]);
 
-			minirec.navigationMain("login");
+			minirec.NavigateMain(MainNavOption.WelcomePage);
 		}
 	}
 }
