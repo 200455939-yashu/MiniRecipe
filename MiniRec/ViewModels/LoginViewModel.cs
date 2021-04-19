@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using MiniRec.Models;
+using MiniRec.Services;
 using Xamarin.Forms;
 
 namespace MiniRec.ViewModels
@@ -34,29 +36,99 @@ namespace MiniRec.ViewModels
 
         private async Task login()
         {
-            if (Username == "Admin" && Password == "admin")
-            {
-                Debug.WriteLine("Correct username & password");
 
-                if (minirec.Properties.ContainsKey("loggedIn"))
+            if (Username == null || Password == null)
+            {
+                await minirec.MainPage.DisplayAlert("Error", "Please enter username/password", "Ok");
+                return;
+            }
+
+
+
+            Debug.WriteLine("Auth process started ..");
+
+            try
+            {
+                var service = Adapter.Shared.authService;
+                var resultObject = await service.SignInAsync(Username, Password);
+
+                if (resultObject != null)
                 {
-                    minirec.Properties["loggedIn"] = true;
+                    //Error true
+                    if (resultObject.error)
+                    {
+                        if (resultObject.message == "PassMismatch")
+                        {
+                            await minirec.MainPage.DisplayAlert("Alert","Invalid password", "ok");
+                        }
+                        else if (resultObject.message == "UserNotFound")
+                        {
+                            await minirec.MainPage.DisplayAlert("Alert","Account not found!", "ok");
+                        }
+                        else
+                        {
+                            await minirec.MainPage.DisplayAlert("Alert","Unknown error!", "ok");
+                        }
+                    }
+
+                    //No Error
+                    else
+                    {
+                        if (resultObject.token != null)
+                        {
+                            await minirec.MainPage.DisplayAlert("Alert","Success login", "OK");
+                            //TODO: save token in app properties
+                            await minirec.SavePropertyAsync(KEYS.KEY_USERNAME, Username);
+                            await minirec.SavePropertyAsync(KEYS.KEY_USERTOKEN, Password);
+                            await minirec.SavePropertyAsync("token", resultObject.token);
+                            minirec.SignIn();
+                        }
+                        else
+                        {
+                            await minirec.MainPage.DisplayAlert("Alert","Token not found!", "Ok");
+                        }
+                    }
                 }
                 else
                 {
-                    minirec.Properties.Add("loggedIn", true);
+                    await minirec.MainPage.DisplayAlert("Alert","Unknown Error", "OK");
                 }
 
-                await minirec.SavePropertiesAsync();
-                minirec.navigationMain("main");
+
+
             }
-            else
+            catch (Exception e)
             {
-                await Nav.Shared.DisplayAlertAsync("Alert", "Invalid Username or Password");
-                //await minirec.MainPage.DisplayAlert("Alert", "Invalid Username or Password", "OK");
-                Username = "";
-                Password = "";
+                await minirec.MainPage.DisplayAlert("Alert",$"Something went wrong:{e.Message}", "OK");
+                throw new Exception($"Something went wrong:{e.Message}");
             }
+
+
+
+
+            //if (Username == "Admin" && Password == "admin")
+            //{
+            //    Debug.WriteLine("Correct username & password");
+
+            //    if (minirec.Properties.ContainsKey("loggedIn"))
+            //    {
+            //        minirec.Properties["loggedIn"] = true;
+            //    }
+            //    else
+            //    {
+            //        minirec.Properties.Add("loggedIn", true);
+            //    }
+
+            //    await minirec.SavePropertiesAsync();
+            //    minirec.navigationMain("main");
+            //}
+            //else
+            //{
+            //    await Nav.Shared.DisplayAlertAsync("Alert", "Invalid Username or Password");
+            //    //await minirec.MainPage.DisplayAlert("Alert", "Invalid Username or Password", "OK");
+            //    Username = "";
+            //    Password = "";
+            //}
         }
     }
 }
