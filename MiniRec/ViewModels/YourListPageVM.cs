@@ -20,7 +20,7 @@ namespace MiniRec.ViewModels {
 				Id = 0,
 				Name = "Spaghetti Bolognese",
 				Rating = 4.5f,
-				image_url = "https://minirecphotos.s3.ca-central-1.amazonaws.com/FoodImages/Noodles.jpg",
+				ImageUrl = "https://minirecphotos.s3.ca-central-1.amazonaws.com/FoodImages/Noodles.jpg",
 				InstructionList = new List<String> {
 						"1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 						"2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -39,7 +39,7 @@ namespace MiniRec.ViewModels {
 				Id = 1,
 				Name = "Carbonara",
 				Rating = 4.2f,
-				image_url = "https://minirecphotos.s3.ca-central-1.amazonaws.com/FoodImages/Carbonara.jpg",
+				ImageUrl = "https://minirecphotos.s3.ca-central-1.amazonaws.com/FoodImages/Carbonara.jpg",
 				InstructionList = new List<String> {
 						"1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 						"2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -56,7 +56,7 @@ namespace MiniRec.ViewModels {
 				Id = 2,
 				Name = "Onion Soup",
 				Rating = 3.5f,
-				image_url = "https://minirecphotos.s3.ca-central-1.amazonaws.com/FoodImages/Carbonara.jpg",
+				ImageUrl = "https://minirecphotos.s3.ca-central-1.amazonaws.com/FoodImages/Carbonara.jpg",
 				InstructionList = new List<String> {
 						"1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 						"2. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",

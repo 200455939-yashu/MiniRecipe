@@ -26,7 +26,7 @@
                 <DataTemplate>
                     <Frame BorderColor="LightGray" CornerRadius="3" HasShadow="False">
                         <StackLayout Margin="0,0,0,15">
-                            <Image Source="{Binding image_url}"
+                            <Image Source="{Binding ImageUrl}"
                                    Aspect="AspectFill"
                                    HeightRequest="150"
                                    WidthRequest="150"/>
