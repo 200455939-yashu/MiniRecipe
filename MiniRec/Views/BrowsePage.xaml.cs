@@ -10,12 +10,18 @@ using MiniRec.Models;
 namespace MiniRec.Views {
 	public partial class BrowsePage : ContentPage {
 
-		public BrowsePage() {
-			BindingContext = new BrowsePageVM();
-			InitializeComponent();
-		}
 
-		void collectionList_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e) {
+        public BrowsePage()
+        {
+            BindingContext = new BrowsePageVM();
+            InitializeComponent();
+            //ContentPage = new BrowsePage() { BindingContext = new BrowsePageVM()}
+
+        }
+
+        public BrowsePage ContentPage { get; set; }
+
+        void collectionList_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e) {
 			if(collectionList.SelectedItem == null) return;
 
 			var categoryObject = (e.CurrentSelection.FirstOrDefault() as Category);
