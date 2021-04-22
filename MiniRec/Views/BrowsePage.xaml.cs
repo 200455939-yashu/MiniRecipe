@@ -16,8 +16,12 @@ namespace MiniRec.Views {
 		}
 
 		void collectionList_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e) {
+
+			Debug.WriteLine("category changed 1");
 			if(collectionList.SelectedItem == null) return;
 
+
+			Debug.WriteLine("category changed 2");
 			var categoryObject = (e.CurrentSelection.FirstOrDefault() as Category);
 
 			if(categoryObject != null) {
@@ -28,6 +32,9 @@ namespace MiniRec.Views {
 			}
 
 			//collectionList.SelectedItem = null;
+		}
+
+		void recipeList_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e) {
 		}
 	}
 }
