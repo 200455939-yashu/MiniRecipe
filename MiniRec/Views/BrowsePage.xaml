@@ -26,52 +26,50 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
+
+
             <ScrollView
                 Orientation="Horizontal"
                 HorizontalOptions="Fill">
-                <StackLayout Orientation="Horizontal">
-                    <Frame BorderColor="Gray"
-                           Margin="20, 10"
-                           CornerRadius="10"
-                           HasShadow="True"
-                           WidthRequest="300"
-                           HeightRequest="570"
-                           >
-                        <StackLayout Spacing="15">
-                            <Image Source="recipe_image_300_400.png"
-                                   Margin="-10"
-                                   Aspect="AspectFit"
-                                   HeightRequest="400"
-                                   WidthRequest="300"
-                                   />
-                            <Label Text="Carbonara" FontSize="Large" FontAttributes="Bold" />
-                            <Label
-                                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula magna, rutrum non quam et, auctor sagittis lectus. Suspendisse lacinia ornare nulla, vel semper nisl semper vel."
-                                FontSize="Small"
-                                />
-                         </StackLayout>
-                    </Frame>
-                    <Frame BorderColor="Gray"
-                           Margin="20, 10"
-                           CornerRadius="10"
-                           HasShadow="True"
-                           WidthRequest="300"
-                           HeightRequest="570"
-                           >
-                        <StackLayout Spacing="15">
-                            <Image Source="recipe_image_300_400.png"
-                                   Margin="-10"
-                                   Aspect="AspectFit"
-                                   HeightRequest="400"
-                                   WidthRequest="300"
-                                   />
-                            <Label Text="Bolognese" FontSize="Large" FontAttributes="Bold" />
-                            <Label
-                                Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula magna, rutrum non quam et, auctor sagittis lectus. Suspendisse lacinia ornare nulla, vel semper nisl semper vel."
-                                FontSize="Small"
-                                />
-                         </StackLayout>
-                    </Frame>
+                <StackLayout Orientation="Horizontal"
+                             Spacing="20">
+
+                    <CollectionView
+                        x:Name="recipeList"
+                        ItemsSource="{Binding AllRecipeList}"
+                        ItemsLayout="HorizontalList"
+                        HorizontalOptions="Center"
+                        SelectionMode="Single"
+                        FlowDirection="LeftToRight"
+                        SelectionChanged="recipeList_SelectionChanged">
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BorderColor="Gray"
+                                       Margin="20, 10"
+                                       CornerRadius="10"
+                                       HasShadow="True"
+                                       WidthRequest="300"
+                                       HeightRequest="500"
+                                       >
+                                    <StackLayout Spacing="15">
+                                        <Image Source="{Binding ImageUrl}"
+                                               Margin="-10"
+                                               Aspect="AspectFit"
+                                               HeightRequest="400"
+                                               WidthRequest="300"
+                                               />
+                                        <Label Text="{Binding Name}" FontSize="Large" FontAttributes="Bold" />
+                                        <Label
+                                            Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula magna, rutrum non quam et, auctor sagittis lectus. Suspendisse lacinia ornare nulla, vel semper nisl semper vel."
+                                            FontSize="Small"
+                                            />
+                                     </StackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
                  </StackLayout>
             </ScrollView>
         </StackLayout>
